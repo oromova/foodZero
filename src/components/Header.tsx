@@ -5,13 +5,13 @@ function Header() {
 
   return (
     <header className="relative bg-[#233000] text-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 lg:px-12">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 py-4 sm:px-5 sm:py-5 lg:px-12 lg:py-6">
 
         {/* Left side: Burger and Logo */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1 sm:gap-3 lg:gap-4">
           {/* Logo */}
           <a href="/" className="inline-flex items-center">
-            <svg width="250" height="90" viewBox="0 0 307 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="h-auto w-28 sm:w-42 md:w-52 lg:w-62" width="250" height="90" viewBox="0 0 307 115" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M247 27V0H55V27H57V2H245V27H247ZM247 87H245V113H57V87H55V115H247V87Z" fill-rule="evenodd" clip-rule="evenodd" fill="white"/>
               <path d="M14.7591 54.3393V73.625L20.6224 74.2449V75.898H0V74.2449L5.86322 73.625V32.1607L0 31.403V29.8189H34.3706V39.6684H32.214L29.6531 32.3673L14.7591 32.1607V51.8597H27.9009L29.9901 46.7627H31.9445V59.574H29.9227L27.9009 54.3393H14.7591Z" fill="white"/>
               <path d="M69.104 71.6964C65.959 75.0025 61.6683 76.6556 56.2319 76.6556C50.7955 76.6556 46.5048 75.0025 43.3597 71.6964C40.2147 68.3903 38.6422 64.1888 38.6422 59.0918C38.6422 53.9949 40.2147 49.7934 43.3597 46.4872C46.5048 43.1811 50.7955 41.5281 56.2319 41.5281C61.6683 41.5281 65.959 43.1811 69.104 46.4872C72.249 49.7934 73.8215 53.9949 73.8215 59.0918C73.8215 64.1888 72.249 68.3903 69.104 71.6964ZM48.0099 59.0918C48.0099 69.699 50.7505 75.0025 56.2319 75.0025C61.7132 75.0025 64.4539 69.699 64.4539 59.0918C64.4539 53.903 63.8473 49.977 62.6343 47.3138C61.4212 44.6046 59.287 43.25 56.2319 43.25C53.1767 43.25 51.0426 44.6046 49.8295 47.3138C48.6164 49.977 48.0099 53.903 48.0099 59.0918Z" fill="white"/>
@@ -26,8 +26,8 @@ function Header() {
           {/* /Logo */}
  
           {/* Burger button */}
-          <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation menu" aria-expanded={isMenuOpen} aria-controls="main-navigation" className="flex h-18 w-24 items-center justify-center">
-            <svg width="80" height="60" viewBox="0 0 94 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle navigation menu" aria-expanded={isMenuOpen} aria-controls="main-navigation" className="flex h-10 w-10 items-center justify-center sm:h-14 sm:w-14 lg:h-18 lg:w-24">
+            <svg className="h-auto w-10 sm:w-14 lg:w-20" width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line x1="24" y1="21" x2="70" y2="21" strokeWidth="2" stroke="white" />
               <line x1="24" y1="35" x2="70" y2="35" strokeWidth="2" stroke="white" />
               <line x1="24" y1="49" x2="70" y2="49" strokeWidth="2" stroke="white" />
@@ -40,8 +40,8 @@ function Header() {
 
         {/* Right side: Phone and Reservation */}
         <div className="flex items-center gap-6">
-          <a href="tel:+86852346000" className="hidden text-xl md:inline">+86 852 346 000</a>
-          <a href="/reservation" className="border border-white px-8 py-3 font-serif text-2xl font-semibold transition-colors hover:bg-white hover:text-[#233000]">Reservations</a>
+          <a href="tel:+86852346000" className="hidden text-base lg:inline lg:text-xl">+86 852 346 000</a>
+          <a href="/reservation" className="whitespace-nowrap border border-white px-3 py-2 font-rufina text-xs font-semibold transition-colors hover:bg-white hover:text-[#233000] sm:px-5 sm:py-3 sm:text-lg lg:px-12 lg:py-5 lg:text-2xl">Reservations</a>
         </div>
         {/* /Right side: Phone and Reservation */}
 
@@ -49,13 +49,13 @@ function Header() {
 
       {/* Navigation menu */}
       {isMenuOpen && (
-        <nav id="main-navigation" aria-label="Main navigation" className="absolute left-0 top-full z-50 w-full bg-[#233000] px-8 py-8 shadow-lg">
+        <nav id="main-navigation" aria-label="Main navigation" className="absolute left-0 top-full z-50 w-full bg-[#233000] px-5 py-6 shadow-lg sm:px-8 sm:py-8">
           <ul className="flex flex-col gap-5">
-            <li><a href="/" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-[#d4e2a5]">Home</a></li>
-            <li><a href="/menu" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-[#d4e2a5]">Menu</a></li>
-            <li><a href="/blogs" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-[#d4e2a5]">Blogs</a></li>
-            <li><a href="/about" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-[#d4e2a5]">About</a></li>
-            <li><a href="/contacts" onClick={() => setIsMenuOpen(false)} className="text-xl hover:text-[#d4e2a5]">Contacts</a></li>
+            <li><a href="/" onClick={() => setIsMenuOpen(false)} className="text-base lg:text-xl hover:text-[#d4e2a5]">Home</a></li>
+            <li><a href="/menu" onClick={() => setIsMenuOpen(false)} className="text-base lg:text-xl hover:text-[#d4e2a5]">Menu</a></li>
+            <li><a href="/blogs" onClick={() => setIsMenuOpen(false)} className="text-base lg:text-xl hover:text-[#d4e2a5]">Blogs</a></li>
+            <li><a href="/about" onClick={() => setIsMenuOpen(false)} className="text-base lg:text-xl hover:text-[#d4e2a5]">About</a></li>
+            <li><a href="/contacts" onClick={() => setIsMenuOpen(false)} className="text-base lg:text-xl hover:text-[#d4e2a5]">Contacts</a></li>
           </ul>
         </nav>
       )}
